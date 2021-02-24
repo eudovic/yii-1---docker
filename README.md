@@ -11,7 +11,7 @@ Only to your knowledge, the docker php port is 8082 and docker MSQL port is 8083
 
 
 ### Steps To Yii
-Open localhost:8082/app to see yii framework working
+Open localhost:8082 to see yii framework working
 Open localhost:8082/requirements/index.php
 ##### IMPORTANT
 If you want to run yii commands you should run these commands by protected folder.
