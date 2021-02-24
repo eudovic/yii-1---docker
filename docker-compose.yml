@@ -3,7 +3,7 @@ php:
   ports: 
     - "8082:80"
   volumes: 
-    - ./www/app:/var/www/html
+    - ./www:/var/www/html
   container_name: yii_tests_v1
   links:
   - db

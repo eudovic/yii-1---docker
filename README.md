@@ -5,14 +5,14 @@ If you don't already have Docker , you can see how to install it here [docker in
 
 ### Steps to enviroment
 1. Clone this repository 
-1. RUN composer-docker up (run by root project folder)
+1. RUN docker-compose up (run by root project folder)
 
 Only to your knowledge, the docker php port is 8082 and docker MSQL port is 8083. You can change these ports on docker-composer.yml
 
 
 ### Steps To Yii
-Open localhost:8082 to see yii framework working
-
+Open localhost:8082/app to see yii framework working
+Open localhost:8082/requirements/index.php
 ##### IMPORTANT
 The application is inside www/app, if you want to run yii commands you should run these commands by app/protected folder.
 Pay atention, all your yiic command should be runned on php docker instance. How could I Do?
