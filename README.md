@@ -14,7 +14,7 @@ Only to your knowledge, the docker php port is 8082 and docker MSQL port is 8083
 Open localhost:8082/app to see yii framework working
 Open localhost:8082/requirements/index.php
 ##### IMPORTANT
-The application is inside www/app, if you want to run yii commands you should run these commands by app/protected folder.
+If you want to run yii commands you should run these commands by protected folder.
 Pay atention, all your yiic command should be runned on php docker instance. How could I Do?
 1. On terminal type: docker exec -it yii_tests_v1 /bin/sh
 2. cd protected

@@ -1,0 +1,55 @@
+2021/02/24 13:05:12 [error] [php] date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. (/var/www/html/protected/views/layouts/main.php:51)
+Stack trace:
+#0 /var/www/html/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#1 /var/www/html/framework/web/widgets/CContentDecorator.php(76): SiteController->renderFile()
+#2 /var/www/html/framework/web/widgets/CContentDecorator.php(54): CContentDecorator->decorate()
+#3 /var/www/html/framework/web/widgets/COutputProcessor.php(44): CContentDecorator->processOutput()
+#4 /var/www/html/framework/web/CBaseController.php(215): CContentDecorator->run()
+#5 /var/www/html/framework/web/CBaseController.php(309): SiteController->endWidget()
+#6 /var/www/html/protected/views/layouts/column1.php(6): SiteController->endContent()
+#7 /var/www/html/framework/web/CBaseController.php(126): require()
+#8 /var/www/html/framework/web/CBaseController.php(95): SiteController->renderInternal()
+#9 /var/www/html/framework/web/CController.php(787): SiteController->renderFile()
+#10 /var/www/html/protected/controllers/SiteController.php(32): SiteController->render()
+#11 /var/www/html/framework/web/actions/CInlineAction.php(49): SiteController->actionIndex()
+#12 /var/www/html/framework/web/CController.php(308): CInlineAction->runWithParams()
+#13 /var/www/html/framework/web/CController.php(286): SiteController->runAction()
+#14 /var/www/html/framework/web/CController.php(265): SiteController->runActionWithFilters()
+#15 /var/www/html/framework/web/CWebApplication.php(282): SiteController->run()
+#16 /var/www/html/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#17 /var/www/html/framework/base/CApplication.php(185): CWebApplication->processRequest()
+#18 /var/www/html/index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in /var/www/html/protected/views/layouts/main.php (51)
+in /var/www/html/protected/views/layouts/column1.php (6)
+in /var/www/html/protected/controllers/SiteController.php (32)
+2021/02/24 13:07:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'yii_tests.tbl_migration' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `tbl_migration`.
+2021/02/24 13:14:52 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{{test_table}} (
+			`id` int(11) NOT NULL auto_increment,
+			`value` varchar(255' at line 1. The SQL statement executed was: CREATE TABLE {{test_table}} (
+			`id` int(11) NOT NULL auto_increment,
+			`value` varchar(255) default NULL,
+			PRIMARY KEY  (`id`)
+		  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;.
+2021/02/24 13:14:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '{{test_table}} (
+			`id` int(11) NOT NULL auto_increment,
+			`value` varchar(255' at line 1. The SQL statement executed was: CREATE TABLE {{test_table}} (
+			`id` int(11) NOT NULL auto_increment,
+			`value` varchar(255) default NULL,
+			PRIMARY KEY  (`id`)
+		  ) ENGINE=InnoDB DEFAULT CHARSET=utf8;' in /var/www/html/framework/db/CDbCommand.php:358
+Stack trace:
+#0 /var/www/html/framework/db/CDbMigration.php(164): CDbCommand->execute(Array)
+#1 /var/www/html/protected/migrations/m210224_130426_test_table.php(11): CDbMigration->execute('CREATE TABLE {{...')
+#2 /var/www/html/framework/cli/commands/MigrateCommand.php(415): m210224_130426_test_table->up()
+#3 /var/www/html/framework/cli/commands/MigrateCommand.php(109): MigrateCommand->migrateUp('m210224_130426_...')
+#4 [internal function]: MigrateCommand->actionUp(Array)
+#5 /var/www/html/framework/console/CConsoleCommand.php(178): ReflectionMethod->invokeArgs(Object(MigrateCommand), Array)
+#6 /var/www/html/framework/console/CConsoleCommandRunner.php(71): CConsoleCommand->run(Array)
+#7 /var/www/html/framework/console/CConsoleApplication.php(92): CConsoleCommandRunner->run(Array)
+#8 /var/www/html/framework/base/CApplication.php(185): CConsoleApplication->processRequest()
+#9 /var/www/html/framework/yiic.php(33): CApplication->run()
+#10 /var/www/html/protected/yiic.php(7): require_once('/var/www/html/f...')
+#11 /var/www/html/protected/yiic(4): require_once('/var/www/html/p...')
+#12 {main}
+---
