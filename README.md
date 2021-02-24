@@ -1,4 +1,4 @@
-# Yii 1.0 - DOCKER
+# Yii 1.1 - DOCKER
 
 There are some containers here to run Yii 1 (PHP and MYSL) on docker .
 If you don't already have Docker , you can see how to install it here [docker installation](https://docs.docker.com/get-started/ "docker installation")
